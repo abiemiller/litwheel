@@ -31,6 +31,8 @@ body {
   height: 100%;
   display: block;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 .hotspot-layer {
@@ -58,8 +60,10 @@ body {
   transform: translate(-50%, -50%);
   border-radius: 50%;
   border: none;
+  outline: none;
   background: transparent;
   cursor: pointer;
+  appearance: none;
 }
 </style>
 </head>
@@ -72,41 +76,25 @@ body {
     <img src="./Litwheel.png" class="wheel-image" alt="Literacy Wheel">
 
     <svg class="hotspot-layer" viewBox="0 0 100 100">
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/oracy" target="_blank">
-        <path class="outer-ring-link" fill-rule="evenodd" d="M 50 1 A 49 49 0 1 1 49.99 1 Z M 50 8 A 42 42 0 1 0 50.01 8 Z"></path>
-      </a>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment" target="_blank">
-        <path class="click-wedge" d="M 33.93 11.20 A 42 42 0 0 1 66.07 11.20 L 55.36 36.86 A 14 14 0 0 0 44.64 36.86 Z"></path>
-      </a>
+      <path class="outer-ring-link" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/oracy')" fill-rule="evenodd" d="M 50 1 A 49 49 0 1 1 49.99 1 Z M 50 8 A 42 42 0 1 0 50.01 8 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive" target="_blank">
-        <path class="click-wedge" d="M 66.07 11.20 A 42 42 0 0 1 88.80 33.93 L 63.14 44.64 A 14 14 0 0 0 55.36 36.86 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment')" d="M 33.93 11.20 A 42 42 0 0 1 66.07 11.20 L 55.36 36.86 A 14 14 0 0 0 44.64 36.86 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections" target="_blank">
-        <path class="click-wedge" d="M 88.80 33.93 A 42 42 0 0 1 88.80 66.07 L 63.14 55.36 A 14 14 0 0 0 63.14 44.64 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive')" d="M 66.07 11.20 A 42 42 0 0 1 88.80 33.93 L 63.14 44.64 A 14 14 0 0 0 55.36 36.86 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax" target="_blank">
-        <path class="click-wedge" d="M 88.80 66.07 A 42 42 0 0 1 66.07 88.80 L 55.36 63.14 A 14 14 0 0 0 63.14 55.36 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections')" d="M 88.80 33.93 A 42 42 0 0 1 88.80 66.07 L 63.14 55.36 A 14 14 0 0 0 63.14 44.64 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression" target="_blank">
-        <path class="click-wedge" d="M 66.07 88.80 A 42 42 0 0 1 33.93 88.80 L 44.64 63.14 A 14 14 0 0 0 55.36 63.14 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax')" d="M 88.80 66.07 A 42 42 0 0 1 66.07 88.80 L 55.36 63.14 A 14 14 0 0 0 63.14 55.36 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology" target="_blank">
-        <path class="click-wedge" d="M 33.93 88.80 A 42 42 0 0 1 11.20 66.07 L 36.86 55.36 A 14 14 0 0 0 44.64 63.14 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression')" d="M 66.07 88.80 A 42 42 0 0 1 33.93 88.80 L 44.64 63.14 A 14 14 0 0 0 55.36 63.14 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness" target="_blank">
-        <path class="click-wedge" d="M 11.20 66.07 A 42 42 0 0 1 11.20 33.93 L 36.86 44.64 A 14 14 0 0 0 36.86 55.36 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology')" d="M 33.93 88.80 A 42 42 0 0 1 11.20 66.07 L 36.86 55.36 A 14 14 0 0 0 44.64 63.14 Z"></path>
 
-      <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling" target="_blank">
-        <path class="click-wedge" d="M 11.20 33.93 A 42 42 0 0 1 33.93 11.20 L 44.64 36.86 A 14 14 0 0 0 36.86 44.64 Z"></path>
-      </a>
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness')" d="M 11.20 66.07 A 42 42 0 0 1 11.20 33.93 L 36.86 44.64 A 14 14 0 0 0 36.86 55.36 Z"></path>
+
+      <path class="click-wedge" onclick="openLink('https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling')" d="M 11.20 33.93 A 42 42 0 0 1 33.93 11.20 L 44.64 36.86 A 14 14 0 0 0 36.86 44.64 Z"></path>
+
     </svg>
   </div>
 
@@ -120,6 +108,10 @@ let rotation = 0;
 function spinWheel() {
   rotation += 720;
   document.getElementById("spinArea").style.transform = "rotate(" + rotation + "deg)";
+}
+
+function openLink(url) {
+  window.open(url, "_blank");
 }
 </script>
 
