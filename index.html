@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,13 +9,15 @@
 body {
   margin: 0;
   background: transparent;
+  display: flex;
+  justify-content: center;
 }
 
 .wheel-stage {
   position: relative;
   width: min(95vw, 700px);
   height: min(95vw, 700px);
-  margin: auto;
+  margin-top: 20px;
 }
 
 #spinArea {
@@ -43,7 +46,7 @@ body {
 
 .click-wedge,
 .outer-ring-link {
-  fill: transparent;
+  fill: rgba(255,255,255,0.001);
   cursor: pointer;
   pointer-events: all;
 }
@@ -69,10 +72,12 @@ body {
 <div class="wheel-stage">
 
   <div id="spinArea">
+
     <img src="./Litwheel.png" class="wheel-image" alt="Literacy for Multilingual Learners Wheel">
 
     <svg class="hotspot-layer" viewBox="0 0 100 100">
 
+      <!-- OUTER RING -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/oracy" target="_blank">
         <path class="outer-ring-link" fill-rule="evenodd" d="
           M 50 1 A 49 49 0 1 1 49.99 1 Z
@@ -80,42 +85,52 @@ body {
         "></path>
       </a>
 
+      <!-- Assessment -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/assessment" target="_blank">
         <path class="click-wedge" d="M 33.93 11.20 A 42 42 0 0 1 66.07 11.20 L 55.36 36.86 A 14 14 0 0 0 44.64 36.86 Z"></path>
       </a>
 
+      <!-- CLR -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/culturally-and-linguistically-responsive" target="_blank">
         <path class="click-wedge" d="M 66.07 11.20 A 42 42 0 0 1 88.80 33.93 L 63.14 44.64 A 14 14 0 0 0 55.36 36.86 Z"></path>
       </a>
 
+      <!-- Cross Linguistic -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/cross-linguistic-connections" target="_blank">
         <path class="click-wedge" d="M 88.80 33.93 A 42 42 0 0 1 88.80 66.07 L 63.14 55.36 A 14 14 0 0 0 63.14 44.64 Z"></path>
       </a>
 
+      <!-- Syntax -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/syntax" target="_blank">
         <path class="click-wedge" d="M 88.80 66.07 A 42 42 0 0 1 66.07 88.80 L 55.36 63.14 A 14 14 0 0 0 63.14 55.36 Z"></path>
       </a>
 
+      <!-- Text Comprehension -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/text-comprehension-and-written-expression" target="_blank">
         <path class="click-wedge" d="M 66.07 88.80 A 42 42 0 0 1 33.93 88.80 L 44.64 63.14 A 14 14 0 0 0 55.36 63.14 Z"></path>
       </a>
 
+      <!-- Vocabulary -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/vocabulary-and-morphology" target="_blank">
         <path class="click-wedge" d="M 33.93 88.80 A 42 42 0 0 1 11.20 66.07 L 36.86 55.36 A 14 14 0 0 0 44.64 63.14 Z"></path>
       </a>
 
+      <!-- Phonological Awareness -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonological-awareness" target="_blank">
         <path class="click-wedge" d="M 11.20 66.07 A 42 42 0 0 1 11.20 33.93 L 36.86 44.64 A 14 14 0 0 0 36.86 55.36 Z"></path>
       </a>
 
+      <!-- Phonics -->
       <a href="https://sites.google.com/cherrycreekschools.org/ccsd-literacy-for-mls/phonics-and-spelling" target="_blank">
         <path class="click-wedge" d="M 11.20 33.93 A 42 42 0 0 1 33.93 11.20 L 44.64 36.86 A 14 14 0 0 0 36.86 44.64 Z"></path>
       </a>
 
     </svg>
+
   </div>
 
-  <button class="center-click" onclick="spinWheel()" aria-label="Click center to spin"></button>
+  <!-- CENTER SPIN BUTTON -->
+  <button class="center-click" onclick="spinWheel()" aria-label="Spin Wheel"></button>
 
 </div>
 
@@ -124,9 +139,12 @@ let rotation = 0;
 
 function spinWheel() {
   rotation += 720 + Math.floor(Math.random() * 90);
-  document.getElementById("spinArea").style.transform = "rotate(" + rotation + "deg)";
+
+  document.getElementById("spinArea").style.transform =
+    `rotate(${rotation}deg)`;
 }
 </script>
 
 </body>
 </html>
+```
